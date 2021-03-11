@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import App from './App'
+import { shallow, mount } from 'enzyme'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('<App/>', ()=>{
+    it('renders 1 <App /> component', ()=>{
+        const component = mount(<App/>);
+        expect(component).toHaveLength(1)
+    })
+
+})
